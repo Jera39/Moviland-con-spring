@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <thead>
+        <tr>
+            <th>Dni</th>
+            <th>Apellidos</th>
+            <th>Nombres</th>
+            <th>Correo</th>
+            <th>Telefono</th>
+            <th>Dirección</th>
+            <th>Especialidad</th>
+            <th colspan="2">Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="celular : ${listaCelular}">
+            <td th:text="${celular.Marca}"></td>
+            <td th:text="${celular.Nombre}"></td>
+            <td th:text="${celular.Stock}"></td>
+            <td th:text="${celular.Pantalla(In)}"></td>
+            <td th:text="${celular.Bateria(mAh)}"></td>
+            <td th:text="${celular.S.O.}"></td>
+            <td th:text="${celular.Camara(MP)}"></td>
+           
+        </tr>
+    </tbody>
+    
+</body>
+</html>

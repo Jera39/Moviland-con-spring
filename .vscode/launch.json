@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MovilandApplication<moviland>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "moviland.com.moviland.MovilandApplication",
+            "projectName": "moviland",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
