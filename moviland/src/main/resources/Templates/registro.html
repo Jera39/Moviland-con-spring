@@ -68,7 +68,7 @@
                             </a></p>
                     </div>
                 </div>
-                <div id="Resgistrarse" class="form-text text-light">Ya tienes una cuenta?<a href="login.html"> Loguearme</a></div>
+                <div id="Resgistrarse" class="form-text text-light">Ya tienes una cuenta?<a th:href="@{/login}"> Loguearme</a></div>
             </div>
             <div class="cuadro">
                 <!-- Contenido de inicio de sesión aquí -->
@@ -84,7 +84,7 @@
                     <form th:action="@{/registroForm}" th:object="${usuario}" method="post">
                         <div class="mb-4">
                             <label for="exampleInputEmail1" class="form-label text-light">Nombre de Usuario</label>
-                            <input type="text" class="form-control" id="InputUserName"
+                            <input type="text" th:field="*{nombre}" class="form-control" id="InputUserName"
                                 aria-describedby="emailHelp">
                         </div>
                         <div class="mb-4">
@@ -97,7 +97,7 @@
                             <label for="exampleInputPassword1" class="form-label text-light">Contraseña</label>
                             <input type="password" th:field="*{contraseña}" class="form-control" id="exampleInputPassword1">
                         </div>
-                        <a href="sinConexion.html" class="btn btn-primary" id="finalizar-registro">Registrarme</a> 
+                        <button type="submit" class="btn btn-primary" id="finalizar-registro">Registrarme</button> 
                         
 
                     </form>

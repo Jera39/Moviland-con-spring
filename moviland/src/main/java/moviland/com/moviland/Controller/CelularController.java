@@ -2,6 +2,7 @@ package moviland.com.moviland.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,10 +16,17 @@ import moviland.com.moviland.Service.CelularService;
 public class CelularController {
     @Autowired
     private CelularService celularService;
-    @GetMapping("/")
-    public String presentacion(Model model){
+    
+    @GetMapping("/presentacion")
+    public String presentacion(Model model, @CookieValue(name = "username", required = false) String username) {
+        if (username != null) {
+            model.addAttribute("username", username);
+        } else {
+            model.addAttribute("username", null);
+        }
         return "index";
     }
+
     @GetMapping("/catalogo")
     public String verCelulares(Model model){
         model.addAttribute("listaCelular", celularService.getCelulares());
