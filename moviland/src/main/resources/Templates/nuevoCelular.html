@@ -64,66 +64,50 @@
             <h2>Inserte el Nuevo Celular</h2>
         </div>
         <div class="formulario">
-            <div class="mb-3">
-                <form action="">
+            <form th:action="@{/guardarCelular}" th:object="${Celular}" method="post">
+                <div class="mb-3">
                     <label for="" class="form-label">Marca del Celular</label>
-                    <input type="" class="form-control" id=""
-                        placeholder="Huawei / Samsung">
-            </div>
-            <div class="mb-3">
-                <form action="">
+                    <input type="text" th:field="*{marca}" class="form-control"  placeholder="Huawei / Samsung">
+                </div>
+                <div class="mb-3">
                     <label for="" class="form-label">Nombre del Celular</label>
-                    <input type="" class="form-control" id=""
-                        placeholder="Celular Series X">
-            </div>
-            <div class="mb-3">
-                <form action="">
+                    <input type="text" th:field="*{nombre}" class="form-control" id="" placeholder="Celular Series X">
+                </div>
+                <div class="mb-3">
                     <label for="" class="form-label">Cantidad en Stock</label>
-                    <input type="" class="form-control" id=""
-                        placeholder="100">
-            </div>
-            <div class="mb-3">
-                <form action="">
+                    <input type="number" th:field="*{stock}" class="form-control" id="" placeholder="100">
+                </div>
+                <div class="mb-3">
                     <label for="" class="form-label">Pantalla del Celular</label>
-                    <input type="" class="form-control" id=""
-                        placeholder="20'">
-            </div>
-            <div class="mb-3">
-                <form action="">
+                    <input type="number" th:field="*{pantalla}" class="form-control" id="" placeholder="20'">
+                </div>
+                <div class="mb-3">
                     <label for="" class="form-label">Batería del Celular</label>
-                    <input type="" class="form-control" id=""
-                        placeholder="100 mAh">
-            </div>
-            <div class="mb-3">
-                <form action="">
+                    <input type="number" th:field="*{bateria}" class="form-control" id="" placeholder="100 mAh">
+                </div>
+                <div class="mb-3">
                     <label for="" class="form-label">Sistema Operativo del Dispositivo</label>
-                    <input type="" class="form-control" id=""
-                        placeholder="Android / iPhone">
-            </div>
-            <div class="mb-3">
-                <form action="">
-                    <label for="" class="form-label">Definicion de la Camara</label>
-                    <input type="" class="form-control" id=""
-                        placeholder="100 Mp">
-            </div>
-            <div class="mb-3">
-                <form action="">
+                    <input type="text" th:field="*{sistemaOperativo}" class="form-control" id="" placeholder="Android / iPhone">
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Definición de la Cámara</label>
+                    <input type="number" th:field="*{camara}" class="form-control" id="" placeholder="100 Mp">
+                </div>
+                <div class="mb-3">
                     <label for="" class="form-label">Almacenamiento del Celular</label>
-                    <input type="" class="form-control" id=""
-                        placeholder="100 Gb">
-            </div>
-            <div class="mb-3">
-                <form action="">
+                    <input type="number" th:field="*{almacenamiento}" class="form-control" id="" placeholder="100 Gb">
+                </div>
+                <div class="mb-3">
                     <label for="" class="form-label">Imagen para el Celular</label>
-                    <input type="" class="form-control" id=""
-                        placeholder="http//:imagen.com">
-            </div>
-            <div class="mb-3">
-                <form action="">
+                    <input type="text" th:field="*{imagen}" class="form-control" id="" placeholder="http//:imagen.com">
+                </div>
+                <div class="mb-3">
                     <label for="" class="form-label">Precio del Celular</label>
-                    <input type="" class="form-control" id=""
-                        placeholder="S/.">
-            </div>
+                    <input type="number" th:field="*{precio}" class="form-control" id="" placeholder="S/.">
+                </div>
+                <button type="submit" class="btn btn-primary">AGREGAR CELULAR</button>
+
+            </form>
         </div>
     </main>
 

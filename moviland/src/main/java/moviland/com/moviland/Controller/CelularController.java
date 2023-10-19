@@ -29,7 +29,7 @@ public class CelularController {
     public String registrarCelularForm(Model model){
         Celular celular = new Celular();
         model.addAttribute("Celular", celular);
-        return "registroCelular";
+        return "nuevoCelular";
     }
     @PostMapping("guardarCelular")
 	public String guardarCelular(@ModelAttribute("Celular") Celular celular) {
@@ -43,12 +43,12 @@ public class CelularController {
 		//Obtener el empleado desde el servicio
 		Celular celular = celularService.buscarCelular(id);
 		modelo.addAttribute("Celular", celular);
-		return "actualizarCelular";
+		return "actualizarCatalogo";
 	}
 
     @GetMapping("/desabilitarCelular/{id}")
-	public String desabilitarCelular(@PathVariable(value="id")int dni) {
-		this.celularService.desabilitarCelular(dni, false);
+	public String desabilitarCelular(@PathVariable(value="id")int id) {
+		this.celularService.desabilitarCelular(id, false);
 		return "redirect:/catalogo";
 	}
 
