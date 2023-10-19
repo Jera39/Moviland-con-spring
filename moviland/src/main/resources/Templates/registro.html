@@ -68,30 +68,32 @@
                             </a></p>
                     </div>
                 </div>
-                <div id="Resgistrarse" class="form-text text-light">No tienes una cuenta? <a href="registro.html">Registrarse</a></div>
+                <div id="Resgistrarse" class="form-text text-light">Ya tienes una cuenta? <a href="login.html">Loguearme</a></div>
             </div>
             <div class="cuadro">
                 <!-- Contenido de inicio de sesión aquí -->
                 <div class="titulo">
-                    <span>L</span>
-                    <span>O</span>
-                    <span>G</span>
+                    <span>S</span>
                     <span>I</span>
+                    <span>G</span>
                     <span>N</span>
+                    <span>U</span>
+                    <span>p</span>
                 </div>
                 <div class="formulario">
-                    <form th:action="@{/autentificar}" th:object="${usuario}" method="post">
+                    <form>
                         <div class="mb-5">
                             <label for="exampleInputEmail1" class="form-label text-light">Correo electrónico</label>
-                            <input type="email" th:field="*{correo}" class="form-control" id="exampleInputEmail1"
+                            <input type="email" class="form-control" id="exampleInputEmail1"
                                 aria-describedby="emailHelp">
                             <div id="emailHelp" class="form-text text-light">Nunca compartiremos tu correo electrónico con nadie.</div>
                         </div>
                         <div class="mb-5">
                             <label for="exampleInputPassword1" class="form-label text-light">Contraseña</label>
-                            <input type="password" th:field="*{contraseña}" class="form-control" id="exampleInputPassword1">
+                            <input type="password" class="form-control" id="exampleInputPassword1">
                         </div>
-                        <button  type="submit" class="btn btn-primary">Loguearme</button>
+                        <a href="sinConexion.html" class="btn btn-primary">Registrarme</a> 
+                        
 
                     </form>
                 </div>
