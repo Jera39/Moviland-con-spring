@@ -23,7 +23,7 @@ public class UsuarioController {
     }
 
     @PostMapping("/autentificar")
-    private String autentificar(@ModelAttribute("usuario") Usuario usuario, HttpServletResponse response){
+    private String autentificar(@ModelAttribute("usuario") Usuario usuario, HttpServletResponse response,Model model){
         
         Usuario user=usuarioService.confirmarUsuario(usuario.getCorreo(), usuario.getContraseña());
         if(user == null){
@@ -33,6 +33,8 @@ public class UsuarioController {
             Cookie  usernameCookie  = new Cookie("nombreUsuario", nombreUsuario);
             usernameCookie.setMaxAge(3600); 
             response.addCookie(usernameCookie);
+            System.out.println(nombreUsuario);
+            model.addAttribute("username", nombreUsuario);
             return "index";
 
         }

@@ -17,8 +17,9 @@ public class CelularController {
     @Autowired
     private CelularService celularService;
     
-    @GetMapping("/presentacion")
+    @GetMapping("/")
     public String presentacion(Model model, @CookieValue(name = "username", required = false) String username) {
+        System.out.println(username);
         if (username != null) {
             model.addAttribute("username", username);
         } else {
