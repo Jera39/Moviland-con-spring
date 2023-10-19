@@ -1,0 +1,58 @@
+body {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar{
+    background-color:  #210D3C;
+}
+
+.nav-item{
+    margin: 0px 20px;
+}
+
+.nav-link:hover{
+    color: #fca466 !important;
+    border-bottom: 2px solid #fca466;
+    font-size: 15px;
+    margin: 0px 17px;
+}
+
+.navbar-brand{
+    padding-left: 3%;
+}
+
+main {
+    
+    width: 100%; /* Establece un ancho del 100% del contenedor principal (normalmente el cuerpo o viewport). */
+    height: 100vh; /* Establece una altura del 100% del viewport. */
+    background-size: 100% 100%;
+}
+.dark-footer {
+    color: #fff;
+    padding: 0px 0;
+    margin-top: auto;
+    width: 100%;
+    background: #210D3C;
+    text-align: center;
+    display: flex;
+}
+
+.dark-footer a{
+    color: #19d7e6;
+}
+
+.tablaCelulares{
+    margin: 2%;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-edit-and-delete{
+    width: 30px;
+    margin: 0;
+    padding: 0;
+}
