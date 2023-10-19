@@ -19,7 +19,8 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" th:href="@{/}"><img src="https://jera-liart.vercel.app/img/icon-cellphone-mountain.png" alt="" width="75"
+                <a class="navbar-brand" th:href="@{/}"><img
+                        src="https://jera-liart.vercel.app/img/icon-cellphone-mountain.png" alt="" width="75"
                         height="75"></a>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav ">
@@ -32,15 +33,51 @@
                         <li class="nav-item">
                             <a class="nav-link active " th:href="@{/registroCelularForm}">NUEVO CELULAR</a>
                         </li>
-                       
-
                     </ul>
-
                 </div>
                 <li class="d-flex" id="login">
-                    <a href="login.html" class="btn btn-outline-info me-2">
+                    <div class="modal fade" id="frame-loguearse" aria-hidden="true"
+                        aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                        <div class="modal-dialog modal-fullscreen">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Iniciar Sesión</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Aqui pondre el iFrame del login para probar
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary" data-bs-target="#frame-registrarse"
+                                        data-bs-toggle="modal">Registrarme</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="frame-registrarse" aria-hidden="true"
+                        aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                        <div class="modal-dialog modal-fullscreen">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Crear Nueva Cuenta</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Aqui pondré el iframe de registro
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary" data-bs-target="#frame-loguearse"
+                                        data-bs-toggle="modal">Loguearme</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="" class="btn btn-outline-info me-2" data-bs-target="#frame-loguearse" data-bs-toggle="modal">
 
-                        <svg width="36px" height="36px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="36px" height="36px" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                             <g id="SVGRepo_iconCarrier">
@@ -60,7 +97,7 @@
     </header>
 
     <main class="contenido">
-        
+
     </main>
 
     <footer class="dark-footer">
@@ -70,13 +107,15 @@
             <div class="row p-5 pb-2">
 
                 <p>
-                    <strong class="has-text-info-light">Moviland</strong> hecho por <a class="has-text-info" href="https://www.canva.com/design/DAFueJ22rE4/pdUR3ikvCOglKoxoJauUNQ/edit?utm_content=DAFueJ22rE4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Grupo 1</a>. Proyecto diseñado para la venta de celulares. <a  class="has-text-info" 
+                    <strong class="has-text-info-light">Moviland</strong> hecho por <a class="has-text-info"
+                        href="https://www.canva.com/design/DAFueJ22rE4/pdUR3ikvCOglKoxoJauUNQ/edit?utm_content=DAFueJ22rE4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Grupo
+                        1</a>. Proyecto diseñado para la venta de celulares. <a class="has-text-info"
                         href="https://www.wipo.int/copyright/es/">&copy; 2023 Grupo 1</a>
                 </p>
 
             </div>
     </footer>
-    
+
 </body>
 
 </html>
