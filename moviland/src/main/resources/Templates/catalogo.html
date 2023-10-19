@@ -64,7 +64,6 @@
             <table class="table text-center table-dark table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">ID</th>
                         <th scope="col">Marca</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Stock</th>
@@ -81,9 +80,8 @@
                 </thead>
                 <tbody>
                     <tr th:each="celular : ${listaCelular}">
-                        <th scope="col"></th>
-                        <td th:text="${celular.id}"></td>
-                        <td th:text="${celular.marca}"></td>
+                      
+                        <th scope="col" th:text="${celular.marca}"></th>
                         <td th:text="${celular.nombre}"></td>
                         <td th:text="${celular.stock}"></td>
                         <td th:text="${celular.pantalla}"></td>
@@ -94,17 +92,17 @@
                         <td th:text="${celular.imagen}"></td>
                         <td th:text="${celular.precio}"></td>
                         
-                        <td><a class="btn btn-success" href="">
+                        <td><a class="btn btn-success" th:href="@{/actualizarCelular/{id}(id=${celular.id})}">
                                 <img src="./img/edit.svg" class="icon-edit-and-delete" alt="">
                                 Editar</a></td>
-                        <td><a class="btn btn-danger" href="">
+                        <td><a class="btn btn-danger" th:href="@{/desabilitarCelular/{id}(id=${celular.id})}">
                                 <img src="./img/delete.svg" class="icon-edit-and-delete" alt="">
                                 Eliminar</a></td>
                     </tr>
 
             </table>
         </div>
-        <a href="nuevoCelular.html" class="nuevoCelular">+</a>
+        <a th:href="@{registroCelularForm}" class="nuevoCelular">+</a>
     </main>
 
     <footer class="dark-footer">

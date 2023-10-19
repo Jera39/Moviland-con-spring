@@ -39,8 +39,7 @@ public class CelularController {
 	}
 
     @GetMapping("/actualizarCelular/{id}")
-	public String actualizarEmpleado(@PathVariable(value="id")
-									int id, Model modelo) {
+	public String actualizarEmpleado(@PathVariable(value="id")int id, Model modelo) {
 		//Obtener el empleado desde el servicio
 		Celular celular = celularService.buscarCelular(id);
 		modelo.addAttribute("Celular", celular);

@@ -12,8 +12,9 @@ public interface CelularRepository extends JpaRepository<Celular, String> {
 
     @Transactional
     @Modifying
-    @Query(value = "UPDATE Celular c SET c.estado = :estado WHERE c.id = :id", nativeQuery = true)
+    @Query(value = "UPDATE Celular SET estado = :estado WHERE id = :id", nativeQuery = true)
     void updateEstado(@Param("id") int id, @Param("estado") Boolean estado);
+
 
 
     List<Celular> findByEstadoTrue();
