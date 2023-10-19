@@ -6,8 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
-
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Cookie;
 import moviland.com.moviland.Model.Usuario;
 import moviland.com.moviland.Service.UsuarioService;
 
@@ -23,12 +23,16 @@ public class UsuarioController {
     }
 
     @PostMapping("/autentificar")
-    private String autentificar(@ModelAttribute("usuario") Usuario usuario){
+    private String autentificar(@ModelAttribute("usuario") Usuario usuario, HttpServletResponse response){
         
         Usuario user=usuarioService.confirmarUsuario(usuario.getCorreo(), usuario.getContraseña());
         if(user == null){
             return "login";
         }else{
+            String nombreUsuario = user.getNombre();
+            Cookie  usernameCookie  = new Cookie("nombreUsuario", nombreUsuario);
+            usernameCookie.setMaxAge(3600); 
+            response.addCookie(usernameCookie);
             return "index";
 
         }
