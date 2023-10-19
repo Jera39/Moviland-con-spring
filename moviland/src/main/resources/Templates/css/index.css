@@ -16,6 +16,9 @@ body {
 
 .nav-link:hover{
     color: #fca466 !important;
+    border-bottom: 2px solid #fca466;
+    font-size: 15px;
+    margin: 0px 17px;
 }
 
 .navbar-brand{
