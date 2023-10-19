@@ -7,7 +7,7 @@ body {
 }
 
 .navbar{
-    background-color:  #210D3C;
+    background: linear-gradient( #210D3C, #009fbe);
 }
 
 .nav-item{
