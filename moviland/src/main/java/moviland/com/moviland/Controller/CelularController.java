@@ -15,7 +15,10 @@ import moviland.com.moviland.Service.CelularService;
 public class CelularController {
     @Autowired
     private CelularService celularService;
-
+    @GetMapping("/")
+    public String presentacion(Model model){
+        return "index";
+    }
     @GetMapping("/catalogo")
     public String verCelulares(Model model){
         model.addAttribute("listaCelular", celularService.getCelulares());
