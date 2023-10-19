@@ -18,7 +18,7 @@ public class CelularController {
     private CelularService celularService;
     
     @GetMapping("/")
-    public String presentacion(Model model, @CookieValue(name = "username", required = false) String username) {
+    public String presentacion(Model model, @CookieValue(name = "nombreUsuario", required = false) String username) {
         System.out.println(username);
         if (username != null) {
             model.addAttribute("username", username);
@@ -29,35 +29,61 @@ public class CelularController {
     }
 
     @GetMapping("/catalogo")
-    public String verCelulares(Model model){
+    public String verCelulares(Model model, @CookieValue(name = "nombreUsuario", required = false) String username){
         model.addAttribute("listaCelular", celularService.getCelulares());
+        if (username != null) {
+            model.addAttribute("username", username);
+        } else {
+            model.addAttribute("username", null);
+        }
         return "catalogo";
     }
 
     @GetMapping("/registroCelularForm")
-    public String registrarCelularForm(Model model){
+    public String registrarCelularForm(Model model, @CookieValue(name = "nombreUsuario", required = false) String username){
         Celular celular = new Celular();
         model.addAttribute("Celular", celular);
+        if (username != null) {
+            model.addAttribute("username", username);
+        } else {
+            model.addAttribute("username", null);
+        }
         return "nuevoCelular";
     }
     @PostMapping("guardarCelular")
-	public String guardarCelular(@ModelAttribute("Celular") Celular celular) {
-		celular.setEstado(true);
+	public String guardarCelular(@ModelAttribute("Celular") Celular celular, @CookieValue(name = "nombreUsuario", required = false) String username,Model model) {
+		if (username != null) {
+            model.addAttribute("username", username);
+        } else {
+            model.addAttribute("username", null);
+        }
+        celular.setEstado(true);
 		celularService.nuevoCelular(celular);
+        
 		return "redirect:/catalogo";
 	}
 
     @GetMapping("/actualizarCelular/{id}")
-	public String actualizarEmpleado(@PathVariable(value="id")int id, Model modelo) {
-		//Obtener el empleado desde el servicio
+	public String actualizarEmpleado(@PathVariable(value="id")int id, Model modelo, @CookieValue(name = "nombreUsuario", required = false) String username,Model model) {
+		if (username != null) {
+            model.addAttribute("username", username);
+        } else {
+            model.addAttribute("username", null);
+        }
+        //Obtener el empleado desde el servicio
 		Celular celular = celularService.buscarCelular(id);
 		modelo.addAttribute("Celular", celular);
 		return "actualizarCatalogo";
 	}
 
     @GetMapping("/desabilitarCelular/{id}")
-	public String desabilitarCelular(@PathVariable(value="id")int id) {
-		this.celularService.desabilitarCelular(id, false);
+	public String desabilitarCelular(@PathVariable(value="id")int id, @CookieValue(name = "nombreUsuario", required = false) String username,Model model) {
+		if (username != null) {
+            model.addAttribute("username", username);
+        } else {
+            model.addAttribute("username", null);
+        }
+        this.celularService.desabilitarCelular(id, false);
 		return "redirect:/catalogo";
 	}
 

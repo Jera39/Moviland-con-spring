@@ -57,4 +57,12 @@ public class UsuarioController {
             return "registro";
         }
     }
+
+    @GetMapping("/cerrarSesion")
+    private String cerrarSesiom(Model model,HttpServletResponse response){
+        Cookie cookie = new Cookie("nombreUsuario", null);
+        cookie.setMaxAge(0);
+        response.addCookie(cookie);
+        return "redirect:/login";
+    }
 }
