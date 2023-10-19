@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+
 import moviland.com.moviland.Model.Usuario;
 import moviland.com.moviland.Service.UsuarioService;
 
@@ -30,6 +31,24 @@ public class UsuarioController {
         }else{
             return "index";
 
+        }
+    }
+    @GetMapping("/registro")
+    private String registro(Model model){
+        Usuario usuario= new Usuario();
+        model.addAttribute("usuario", usuario);
+        return "registro";
+    }
+
+    @PostMapping("/registroForm")
+    private String registroForm(@ModelAttribute("usuario") Usuario usuario){
+        
+        Usuario user=usuarioService.buscarPorCorreo(usuario.getCorreo());
+        if (user == null) {
+            usuarioService.guardarUsuario(usuario);
+            return "login";
+        } else {
+            return "registro";
         }
     }
 }

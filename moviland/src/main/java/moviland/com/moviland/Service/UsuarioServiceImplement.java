@@ -18,4 +18,17 @@ public class UsuarioServiceImplement implements UsuarioService {
         Optional<Usuario> opcional = usuarioRepository.findByCorreoAndContraseña(correo, contraseña);
         return opcional.orElse(null); // Retorna el usuario si existe, o null si no se encontró uno.
     }
+
+    @Override
+    public void guardarUsuario(Usuario usuario) {
+        usuarioRepository.save(usuario);
+    }
+
+    @Override
+    public Usuario buscarPorCorreo(String correo) {
+        return usuarioRepository.findByCorreo(correo);
+    }
+       
+
+    
 }

@@ -9,4 +9,6 @@ import moviland.com.moviland.Model.Usuario;
 public interface UsuarioRepository extends JpaRepository<Usuario, String> {
     @Query("SELECT u FROM Usuario u WHERE u.correo = :correo AND u.contraseña = :contraseña")
     Optional<Usuario> findByCorreoAndContraseña(@Param("correo") String correo, @Param("contraseña") String contraseña);
+
+    Usuario findByCorreo(String correo);
 }
