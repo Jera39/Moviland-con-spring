@@ -12,7 +12,7 @@ public class Celular {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    private Long id;
+    private int id;
 
     @Column(name = "marca", nullable = false)
     private String marca;
@@ -21,7 +21,7 @@ public class Celular {
     private String nombre;
 
     @Column(name = "stock", nullable = false)
-    private Long stock;
+    private int stock;
 
     @Column(name = "pantalla(In)", nullable = false)
     private Float pantalla;
@@ -50,7 +50,7 @@ public class Celular {
     public Celular() {
     }
 
-    public Celular(Long id, String marca, String nombre, Long stock, Float pantalla, Float bateria,
+    public Celular(int id, String marca, String nombre, int stock, Float pantalla, Float bateria,
             String sistemaOperativo, Float camara, Long almacenamiento, String imagen, Float precio, Boolean estado) {
         this.id = id;
         this.marca = marca;
@@ -69,11 +69,11 @@ public class Celular {
     // Getters y setters
 
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -93,11 +93,11 @@ public class Celular {
         this.nombre = nombre;
     }
 
-    public Long getStock() {
+    public int getStock() {
         return stock;
     }
 
-    public void setStock(Long stock) {
+    public void setStock(int stock) {
         this.stock = stock;
     }
 
