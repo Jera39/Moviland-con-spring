@@ -1,16 +1,21 @@
 package moviland.com.moviland.Service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
-public class UsuarioServiceImplement implements UsuarioService{
-@Autowired
-    private UsuarioService usuarioService ;
-    @Override
-    public boolean confirmarUsuario(String correo, String contraseña) {
-        return this.usuarioService.confirmarUsuario(correo, contraseña);
-    }
-    
+import moviland.com.moviland.Model.Usuario;
+import moviland.com.moviland.Repository.UsuarioRepository;
 
+@Service
+public class UsuarioServiceImplement implements UsuarioService {
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
+    @Override
+    public Usuario confirmarUsuario(String correo, String contraseña) {
+        Optional<Usuario> opcional = usuarioRepository.findByCorreoAndContraseña(correo, contraseña);
+        return opcional.orElse(null); // Retorna el usuario si existe, o null si no se encontró uno.
+    }
 }

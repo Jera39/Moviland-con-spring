@@ -1,7 +1,8 @@
 package moviland.com.moviland.Service;
 
+import moviland.com.moviland.Model.Usuario;
 
 public interface UsuarioService {
-    boolean confirmarUsuario(String correo,String contraseñaString);
+    Usuario confirmarUsuario(String correo,String contraseñaString);
 
 }
