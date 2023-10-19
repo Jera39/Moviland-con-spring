@@ -41,3 +41,15 @@ main {
 .dark-footer a{
     color: #19d7e6;
 }
+
+.tablaCelulares{
+    margin: 2%;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-edit-and-delete{
+    width: 30px;
+    margin: 0;
+    padding: 0;
+}
