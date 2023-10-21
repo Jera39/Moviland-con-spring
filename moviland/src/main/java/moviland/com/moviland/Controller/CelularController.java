@@ -15,17 +15,17 @@ import moviland.com.moviland.Service.CelularService;
 @Controller
 public class CelularController {
     @Autowired
-    private CelularService celularService;
+    private CelularService celularService; 
     
     @GetMapping("/")
     public String presentacion(Model model, @CookieValue(name = "nombreUsuario", required = false) String username) {
-        System.out.println(username);
+        System.out.println(username);      
         if (username != null) {
-            model.addAttribute("username", username);
+            model.addAttribute("username", username);  
         } else {
-            model.addAttribute("username", null);
+            model.addAttribute("username", null);  
         }
-        return "index";
+        return "index"; // Retorna la vista "index"
     }
 
     @GetMapping("/catalogo")
@@ -64,13 +64,13 @@ public class CelularController {
 	}
 
     @GetMapping("/actualizarCelular/{id}")
-	public String actualizarEmpleado(@PathVariable(value="id")int id, Model modelo, @CookieValue(name = "nombreUsuario", required = false) String username,Model model) {
+	public String actualizarCelular(@PathVariable(value="id")int id, Model modelo, @CookieValue(name = "nombreUsuario", required = false) String username,Model model) {
 		if (username != null) {
             model.addAttribute("username", username);
         } else {
             model.addAttribute("username", null);
         }
-        //Obtener el empleado desde el servicio
+
 		Celular celular = celularService.buscarCelular(id);
 		modelo.addAttribute("Celular", celular);
 		return "actualizarCatalogo";
